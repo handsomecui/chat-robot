@@ -1,0 +1,29 @@
+actions:
+- utter_你好
+- utter_你是谁
+- utter_我是谁
+- utter_name
+config:
+  store_entities_as_slots: true
+entities:
+- name
+slots:
+  name:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+intents:
+- 你好
+- 你是谁
+- 我是谁
+- name:
+    use_entities: true
+templates:
+  utter_你好:
+  - text: '你好，欢迎骚扰智能聊天机器人！'
+  utter_你是谁:
+  - text: '嗨，{name}！我是小冰冰哦~😯'
+  utter_我是谁:
+  - text: "你是大名鼎鼎的{name}！"
+  utter_name:
+  - text: Hey there! Tell me your name.
